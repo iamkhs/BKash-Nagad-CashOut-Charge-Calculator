@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.cashoutchargecalculator.HelloController" hgap="25" vgap="25">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <HBox alignment="TOP_CENTER" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <Label text="Choose Your MFS Service" style="-fx-font-size:18px;-fx-text-fill: #1e9bf8; -fx-font-weight:bold;" alignment="TOP_CENTER">
+        </Label>
+    </HBox>
+
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroup"/>
+    </fx:define>
+
+    <HBox spacing="15" GridPane.rowIndex="1" GridPane.columnSpan="2" alignment="TOP_CENTER">
+        <RadioButton fx:id="bKash" text="bKash" toggleGroup="$toggleGroup">
+            <font>
+                <Font size="16"/>
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="nagad" text="Nagad" toggleGroup="$toggleGroup">
+            <font>
+                <Font size="16"/>
+            </font>
+        </RadioButton>
+    </HBox>
+
+    <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="0" alignment="CENTER">
+        <TextField fx:id="amountField" promptText="Enter amount" GridPane.rowIndex="2" GridPane.columnIndex="0" onKeyReleased="#handleKeyReleased"/>
+        <Button fx:id="calculate" text="Calculate" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#initialize"/>
+    </HBox>
+
+    <Label visible="false" fx:id="charge" text="Your cash-out charge is = " GridPane.rowIndex="3" GridPane.columnIndex="0">
+        <font>
+            <Font size="16"/>
+        </font>
+    </Label>
+
+</GridPane>
